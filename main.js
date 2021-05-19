@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const slides = Array.from(document.querySelectorAll(".slide"));
-  const slider = document.querySelectorAll(".slider");
-  const buttons = document.querySelectorAll(".buttons div");
+  //const slider = document.querySelectorAll(".slider");
+  const buttons = document.querySelectorAll(".slider-button");
   const dotsEl = document.querySelector(".dots");
   let timeoutId;
 
@@ -121,5 +121,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   getActiveDot();
   functionalDots();
-  autoLoop();
+  //autoLoop();
 });
