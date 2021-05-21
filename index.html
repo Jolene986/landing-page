@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
   <title>Landing Page</title>
@@ -22,8 +24,8 @@ Desktop nav
   <main>
     <section id="first" class="first-section">
       <div class="section-background">
-        <div class="content flex-container">
-          <h1>IQOS je bolji izbor od nastavka pušenja cigareta.</h1>
+        <div class="content flex-container split">
+          <h2>IQOS je bolji izbor od nastavka pušenja cigareta.</h2>
           <div class="text-content">
 <p>Nauka i tehnologija kreiraju viziju o svetu bez duvanskog dima.</p>
 <p>Verujemo u nauku. Verujemo da ona može promeniti živote
@@ -46,10 +48,11 @@ Desktop nav
     <!-- End first section  -->
 
   
-  <!-- Slider -->
+  <!-- Second section Slider -->
   <section class="slider-container">
     <div class="slider">
-      <div class="slide slide-1 active">
+      <!--First slide-->
+      <div class="slide slide-1 active split flex-container">
       
         <div class="slide-img">
       
@@ -65,7 +68,7 @@ Desktop nav
         </div>
       </div>
       <!--Second slide-->
-      <div class="slide slide-2">
+      <div class="slide slide-2 split flex-container">
       
         <div class="slide-img">
           <img src="assets/iqos-2.jpg" />
@@ -85,7 +88,7 @@ Desktop nav
         </div>
       </div>
       <!--Third slide-->
-      <div class="slide slide-3">
+      <div class="slide slide-3 split flex-container">
       
         <div class="slide-img">
           <img src="assets/iqos-1.jpg" />
@@ -110,7 +113,7 @@ Desktop nav
         </div>
       </div>
       <!--Fourth slide-->
-      <div class="slide slide-4">
+      <div class="slide slide-4 split flex-container">
       
         <div class="slide-img">
           <img src="assets/iqos-2.jpg" />
@@ -131,7 +134,7 @@ Desktop nav
         </div>
       </div>
       <!--Fifth slide-->
-      <div class="slide slide-5">
+      <div class="slide slide-5 split flex-container">
       
         <div class="slide-img">
           <img src="assets/iqos-1.jpg" />
@@ -147,6 +150,7 @@ Desktop nav
           </div>
         </div>
       </div>
+<div class="dots"></div>
     </div>
      
     <div class=" slider-button prev">
@@ -159,9 +163,35 @@ Desktop nav
       </div>
      
     
-    <div class="dots"></div>
+   
   </section>
-    
+    <!--End Slider-->
+
+    <!-- Third Section-->
+    <section class="third-section flex-container split" >
+<div class="left-container flex-container">
+<div class="text-container flex-container">
+  <h2 class="text-title">Manje štetnih sastojaka</h2>
+  <p class="text-content">U laboratorijskim uslovima pokazalo se da je IQOS duvanska para manje štetna od duvanskog dima. Naši naučnici temeljno
+  proveravaju naše proizvode pre nego što pređu u vaše ruke. Uz pomoć in vitro eksperimenata u našoj laboratoriji ispitali
+  smo citotoksičnost i genotoksičnost IQOS duvanske pare u poređenju sa dimom iz referentne cigarete napravljene za svrhe
+  istraživanja. Uzeti zajedno, rezultati ovih eksperimenata pokazuju da je IQOS duvanska para znatno manje štetna od dima
+  iz referentne cigarete.</p>
+  </div>
+  <div class="image-container-left">
+    <img src="./assets/iqos-2.jpg" alt="" />
+  </div>
+</div>
+
+
+</div>
+<div class="right-container flex-container">
+  <div class="image-container-right">
+    <img src="./assets/section4.png" alt="" />
+  </div>
+</div>
+    </section>
+    <!--End Third Section-->
      </main>
      <footer class="footer flex-container">
        footer
