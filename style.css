@@ -35,30 +35,26 @@
 }
 html {
   text-align: left;
-  color: var(--clr-neutral-100);
+  color: var(--clr-text);
   opacity: 1;
   background-color: #fff;
-  font-size: 20px;
 }
 body {
   /*overflow-x: hidden;*/
   position: relative;
   color: var(--text-color);
+  letter-spacing: 0px;
 }
 main {
   width: 91.04%;
   margin: 0 auto;
-  background-color: #ffffff;
 }
-
+ul {
+  list-style: none;
+}
 /********
 Typografy
 *********/
-
-h2 {
-  font: var(--f-heading-bold);
-  letter-spacing: 0px;
-}
 
 p,
 a {
@@ -119,6 +115,41 @@ Utility classes
 .split {
 }
 
+.text-title-large {
+  text-align: left;
+  font: var(--f-heading-large-bold);
+  letter-spacing: 0px;
+  color: var(--clr-text);
+  opacity: 1;
+}
+.text-title-bold {
+  text-align: left;
+  font: var(--f-heading-bold);
+  letter-spacing: 0px;
+  color: var(--clr-text);
+  opacity: 1;
+}
+.text-paragraph {
+  color: var(--clr-text);
+  font: var(--f-text-normal);
+  text-align: left;
+}
+
+.text-border {
+  border: 2px solid var(--clr-text);
+  color: var(--text-color);
+  font: var(--f-text-normal);
+  text-align: left;
+}
+.text-border.white {
+  border-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-100);
+}
+
+.text-fusnote {
+  text-align: left;
+  font: var(--f-text-small);
+}
 /*********************************************************************************
                                      HEADER
 ********************************************************************************/
@@ -126,16 +157,58 @@ Utility classes
 /***********
 Desktop menu
 ************/
-.desktop-menu {
+.navigation-menu {
   height: 101px;
-  border-bottom: 3px solid var(--nav-bg);
+  box-shadow: 0px 4px 10px var(--clr-text);
+
+  justify-content: start;
+}
+
+ul {
+  justify-content: flex-start;
+  width: 50%;
+}
+.nav-link {
+  text-align: left;
+  font: --f-link-header;
+  letter-spacing: 0px;
+  color: var(--clr-text);
+  opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+}
+.logo-container {
+  justify-content: flex-start;
+  width: 50%;
+}
+.logo {
+  width: 95px;
+  height: 24px;
 }
 
 /***********
 Mobile menu
 ************/
-.mobile-menu {
-  display: none;
+
+.hamburger {
+  width: 45px;
+  height: 45px;
+  /* position: fixed;
+    top: 50px;
+    right: 50px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-text);
+  margin: auto;
+  transition: all 0.8s;
 }
 
 /*********************************************************************************
@@ -145,20 +218,19 @@ Mobile menu
 First section
 *******/
 
-#first {
+#hero {
   height: 100vh;
 }
-.section-background {
-  background: var(--section-bg) 0% 0% no-repeat padding-box;
-  width: 59.3%;
+.content-wrapper {
+  width: min(59%, 1036px);
   height: 79%;
   position: absolute;
   left: 0;
   bottom: 0;
   /*z-index: -1;*/
 }
-.content {
-  width: 70%;
+.text-content {
+  width: min(70%, 728px);
   text-align: left;
   margin-left: 12%;
   position: relative;
@@ -166,23 +238,13 @@ First section
   padding: 84px 2px;
   flex-direction: column;
 }
-.content > p,
-.text-content > p {
-  padding: 21px;
-  padding-left: 0;
-}
-#first > div.section-background > div > p {
-  border: 2px solid var(--text-color);
-  text-align: center;
-  padding: 25px;
-  margin-top: 1.5em;
-}
+
 .section-image {
   background: transparent url("assets/iqos-1.jpg") 0% 0% no-repeat padding-box;
   background-size: cover;
   opacity: 1;
-  width: 50%;
-  height: 48.3%;
+  width: min(50%, 843px);
+  height: min(48.3%, 501px);
   position: absolute;
   top: 8%;
   right: 0;
@@ -256,13 +318,8 @@ First section
 }
 .slide-text-border {
   padding: 12px 36px;
-  border: 2px solid var(--text-color);
-  font-size: 20px;
-  line-height: 30px;
 }
-.slide-text-note {
-  font-size: 15px;
-  line-height: 23px;
+.slide-text-fusnote {
   padding-top: 14px;
   padding-right: 3%;
 }
@@ -332,10 +389,7 @@ First section
 Third section
 *************/
 
-.third-section {
-  background: var(--section-bg) 0% 0% no-repeat padding-box;
-}
-.third-section > div {
+.two-images-section > div {
   width: 50%;
   height: 874px;
 }
@@ -352,13 +406,6 @@ Third section
   justify-content: space-between;
 }
 
-.text-title {
-  font: normal normal bold 58px/75px var(--font-family);
-}
-
-.text-content {
-}
-
 .image-container-left {
   /* position: absolute;
   top: 829px; */
@@ -369,7 +416,6 @@ Third section
 
 .right-container {
   position: relative;
-  background: var(--orange);
   height: 874px;
 }
 .right-container::before {
@@ -394,17 +440,56 @@ Third section
   height: 537px;
   object-fit: cover;
 }
+/************
+Fourth section
+*************/
+
+/**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! fixed distance you need to - padding*/
+#blue-img-bg {
+  margin-top: 258px;
+}
+/*Smaler image different height*/
+#blue-img-bg > div.left-container.flex-container > div.image-container-left {
+  height: 359px;
+}
+/****************
+V and VI sections 
+**********************/
+
+.image-container {
+  width: 874px;
+}
+
+/************
+Warning popup
+*************/
+
+.warning {
+  width: 100%;
+}
 /*********************************************************************************
                                      FOOTER
 ********************************************************************************/
 
-footer {
+.footer {
   width: 100%;
   color: #fff;
   max-height: 298px;
   height: 298px;
-  background-color: var(--text-color);
+  background-color: var(--clr-text);
+  flex-direction: column;
 }
+
+.footer-links a {
+  font: var(--f-link-footer);
+  color: var(--clr-gray-300);
+}
+
+.copy-right {
+  color: var(--clr-neutral-100);
+  font: var(--f-text-small);
+}
+
 /*********************************************************************************
                                      RESPONSIVE
 ********************************************************************************/
@@ -479,14 +564,23 @@ footer {
 
 /* Tablet 768px */
 @media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
+  .split > div {
+    width: 100%;
+  }
   /*Menu*/
-  .desktop-menu {
-    display: none;
+  .menu,
+  .logo-container {
+    width: 100%;
   }
-  .mobile-menu {
-    display: flex;
+  .menu {
+    height: 0px;
   }
-
+  .menu.show {
+    height: 200px;
+  }
   /*Slider*/
   .slide-1 .content {
     left: 20px;

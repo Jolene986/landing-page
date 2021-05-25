@@ -122,4 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
   getActiveDot();
   functionalDots();
   //autoLoop();
+
+  /*MOBILE MENU */
+
+  let hamburgerIcon = document.querySelector(".hamburger");
+  let menu = document.querySelector(".menu");
+
+  hamburgerIcon.addEventListener("click", function () {
+    console.log("button ");
+    menu.classList.toggle("show");
+  });
 });
