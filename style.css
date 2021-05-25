@@ -38,7 +38,7 @@ html {
   color: var(--clr-text);
   opacity: 1;
   background-color: #fff;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 body {
   /*overflow-x: hidden;*/
@@ -122,6 +122,7 @@ Utility classes
   letter-spacing: 0px;
   color: var(--clr-text);
   opacity: 1;
+  font-size: clamp(2.5rem, 3.5vw, 70px);
 }
 .text-title-bold {
   text-align: left;
@@ -129,13 +130,17 @@ Utility classes
   letter-spacing: 0px;
   color: var(--clr-text);
   opacity: 1;
-  font-size: clamp(30px, 2.5rem, 58px);
+  font-size: clamp(2rem, 3vw, 58px);
+}
+.text-subheading {
+  font: var(--f-subheading-normal);
+  font-size: clamp(1.5rem, 1.5vw, 30px);
 }
 .text-paragraph {
   color: var(--clr-text);
   font: var(--f-text-normal);
   text-align: left;
-  font-size: clamp(16px, 1.5rem, 20px);
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
 }
 
 .text-border {
@@ -312,8 +317,6 @@ First section
   align-items: flex-start;
 }
 .slide-text {
-  font-size: 30px;
-  line-height: 46px;
   padding-bottom: 47px;
   padding-right: 2%;
 }
