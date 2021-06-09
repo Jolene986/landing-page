@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   /*HAMBURGER */
-  let navIcon = document.querySelector("#nav-icon");
+  var navIcon = document.querySelector("#nav-icon");
   if (navIcon) {
     navIcon.addEventListener("click", function () {
+      console.log("click");
       navIcon.classList.toggle("open");
     });
   }
   /*SLIDER */
   let timeoutId;
 
-  const slides = Array.from(document.querySelectorAll(".slide"));
+  //const slides = Array.from(document.querySelectorAll(".slide"));
+  const slides = Array.prototype.slice.call(
+    document.querySelectorAll(".slide")
+  );
   //const slider = document.querySelectorAll(".slider");
   const buttons = document.querySelectorAll(".slider-button");
   const dotsEl = document.querySelector(".dots");
@@ -33,8 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function getPosition() {
     const activeSlide = document.querySelector(".slide.active");
     const activeIndex = slides.indexOf(activeSlide);
-    const [next, prev] = getNextPrev();
-    slides.forEach((slide, index) => {
+    //const [next, prev] = getNextPrev();
+    let next = getNextPrev()[0];
+    let prev = getNextPrev()[1];
+    Array.prototype.slice.call(slides).forEach(function (slide, index) {
       if (index === activeIndex) {
         slide.style.transform = "translateX(0)";
       } else if (slide === prev) {
@@ -44,21 +50,24 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         slide.style.transform = "translateX(100%)";
       }
-      slide.addEventListener("transitionend", () => {
+      //transitionend
+      slide.addEventListener("transitionend", function () {
         slide.classList.remove("top");
       });
     });
   }
-  buttons.forEach((button) => {
-    button.addEventListener("click", () => {
+  Array.prototype.slice.call(buttons).forEach(function (button) {
+    button.addEventListener("click", function () {
       if (button.classList.contains("next")) getNextSlide();
       else if (button.classList.contains("prev")) getPrevSlide();
     });
   });
+
   function getNextSlide() {
     clearInterval(timeoutId);
     const current = document.querySelector(".slide.active");
-    const [next, prev] = getNextPrev();
+    //const [next, prev] = getNextPrev();
+    const next = getNextPrev()[0];
     if (current.classList.contains("top")) {
       return;
     }
@@ -75,7 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function getPrevSlide() {
     clearInterval(timeoutId);
     const current = document.querySelector(".active");
-    const [next, prev] = getNextPrev();
+    //const [next, prev] = getNextPrev();
+    const prev = getNextPrev()[1];
     current.classList.add("top");
     prev.classList.add("top");
     current.style.transform = "translate(100%)";
@@ -89,14 +99,14 @@ document.addEventListener("DOMContentLoaded", function () {
   getPosition();
 
   // dots
-  slides.forEach((slide) => {
+  Array.prototype.slice.call(slides).forEach(function (slide) {
     const dot = document.createElement("div");
     dot.classList.add("dot");
     dotsEl.appendChild(dot);
   });
   function getActiveDot() {
     const allDots = document.querySelectorAll(".dots .dot");
-    allDots.forEach((dot) => {
+    Array.prototype.slice.call(allDots).forEach(function (dot) {
       dot.classList.remove("active");
     });
     const activeSlide = document.querySelector(".slide.active");
@@ -105,15 +115,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function functionalDots() {
     const allDots = document.querySelectorAll(".dots .dot");
-    allDots.forEach((dot, index) => {
-      dot.addEventListener("click", () => {
+    Array.prototype.slice.call(allDots).forEach(function (dot, index) {
+      dot.addEventListener("click", function () {
         getDotSlide(index);
       });
     });
   }
   function getDotSlide(index) {
     clearTimeout(timeoutId);
-    slides.forEach((slide) => {
+    Array.prototype.slice.call(slides).forEach(function (slide) {
       slide.classList.remove("active");
     });
     const current = slides[index];
@@ -124,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function autoLoop() {
-    timeoutId = setTimeout(() => {
+    timeoutId = setTimeout(function () {
       getNextSlide();
     }, 5000);
   }

@@ -3,6 +3,12 @@
   src: url(assets/fonts/IQOS-Regular.otf);
 }
 
+@font-face {
+  font-family: IQOS;
+  src: url("./assets/fonts/IQOS-Regular.otf");
+  src: local("☺︎"), url("./assets/fonts/IQOS-Regular.otf") format("opentype");
+}
+
 /*********************************************************************************
                                      GLOBALS
 ********************************************************************************/
@@ -50,6 +56,8 @@ body {
   color: var(--text-color);
   letter-spacing: 0px;
 }
+
+/*****************************************************************MAIN*******************/
 main {
   width: min(1748px, 95%);
   margin: 0 auto;
@@ -175,32 +183,7 @@ Utility classes
 /*********************************************************************************
                                      HEADER
 ********************************************************************************/
-.nav-icon-wrapper {
-  position: relative;
-  margin-left: 4rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-.nav-icon-wrapper svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.nav-icon-wrapper.open svg {
-  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
-  transition: all 0.3s ease-out;
 
-  opacity: 1;
-}
-
-.nav-icon-wrapper.open .top {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.nav-icon-wrapper.open .bottom {
-}
 /***********
 Desktop menu
 ************/
@@ -364,7 +347,6 @@ First section
 }
 .slide {
   width: 100%;
-
   justify-content: space-between;
   position: absolute;
   z-index: -1;
@@ -434,7 +416,7 @@ First section
 }
 .dots .dot {
   display: inline-block;
-
+  height: 12px;
   width: 12px;
   background-color: var(--clr-primary);
   opacity: 0.5;
