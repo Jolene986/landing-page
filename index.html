@@ -6,39 +6,207 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+ 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script> -->
-  <title>Landing Page</title>
+  <title>Otkrijte IQOS</title>
 </head>
 <body>
   <header>
     <!--Desktop menu-->
-    <nav class="navigation-menu flex-container" >
-<ul class=" menu flex-container">
-   <li><a class="nav-link" href="#" target="_blank">Testiraj IQOS</a></li>
-  <li><a class="nav-link" href="#" target="_blank">Otkrij IQOS</a></li>
-</ul>
-<div class="hamburger">
-
-  <div class="line line-one"></div>
-  
-  <div class="line line-two"></div>
-</div>
-<div class="logo-container flex-container">
-  <div class="logo">
-    <img src="./assets//logo.png" alt="IQOS logo" />
-  </div>
-</div>
+    <nav>
+NAVIGATION
     </nav>
-    
+    <div id="nav-icon">
+      <span></span>
+      <span></span>
+    </div>
+   <!-- <div class="nav-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21.558" height="12" viewBox="0 0 21.558 12">
+        <defs>
+          <style>
+            .a {
+              opacity: 0.801;
+            }
+      
+            .b {
+              fill: none;
+              stroke: #34303d;
+              stroke-width: 2px;
+            }
+          </style>
+        </defs>
+        <g class="a" transform="translate(-31.942 -21.5)">
+          <line class="b top" x2="21.558" transform="translate(31.942 22.5)" />
+          <line class="b bottom" x2="21.558" transform="translate(31.942 32.5)" />
+        </g>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="21.558" height="12" viewBox="0 0 21.558 12">
+        <defs>
+          <style>
+            .a {
+              opacity: 0.801;
+            }
+      
+            .b {
+              fill: none;
+              stroke: #34303d;
+              stroke-width: 2px;
+            }
+          </style>
+        </defs>
+        <g class="a" transform="translate(-31.942 -21.5)">
+          <line class="b top" x2="21.558" transform="translate(31.942 22.5)" />
+          <line class="b bottom" x2="21.558" transform="translate(31.942 32.5)" />
+        </g>
+      </svg>
+   </div> -->
   </header>
   <main>
-    <section id="hero" class= "split" >
+    <!--  Slider section -->
+    <section class="slider-container">
+      <div class="slider">
+        <!--First slide-->
+        <div class="slide slide-1 active flex-container">
+    
+          <div class="slide-img">
+    
+          </div>
+          <div class="slide-content flex-container">
+            <div class="slide-text-content flex-container">
+              <p class="slide-text text-subheading">IQOS zagreva duvan umesto da ga sagoreva, što znači da nema vatre,
+                pepela ili dima.</p>
+              <p class="slide-text text-subheading"> Zbog toga je IQOS bolji izbor u
+                poređenju sa nastavkom pušenja cigareta.</p>
+              <p class="slide-text-border text-border text-paragraph">VAŽNA INFORMACIJA: IQOS nije proizvod bez rizika i on
+                oslobađa nikotin, koji izaziva
+                zavisnost.</p>
+            </div>
+          </div>
+        </div>
+        <!--Second slide-->
+        <div class="slide slide-2 flex-container">
+    
+          <div class="slide-img">
+            <img src="assets/iqos-2.jpg" />
+          </div>
+          <div class="slide-content flex-container">
+            <div class="slide-text-content flex-container">
+              <p class="slide-text text-subheading">IQOS zagreva duvan umesto da ga sagoreva, što u proseku proizvodi 95%
+                manje štetnih
+                sastojaka u poređenju sa
+                cigaretama*.</p>
+              <p class="slide-text-border text-border text-paragraph">VAŽNA INFORMACIJA: To nužno ne znači i smanjenje
+                rizika od 95%. IQOS nije proizvod
+                bez rizika. On oslobađa nikotin, koji
+                izaziva zavisnost.</p>
+              <p class="slide-text-fusnote text-fusnote">*„95% manje” predstavlja prosečno smanjenje nivoa čitavog niza
+                štetnih sastojaka
+                (isključujući nikotin) u poređenju sa
+                dimom referentne cigarete (3R4F). Pogledajte „Važne informacije” na IQOS.com.</p>
+            </div>
+          </div>
+        </div>
+        <!--Third slide-->
+        <div class="slide slide-3 flex-container">
+    
+          <div class="slide-img">
+            <img src="assets/iqos-1.jpg" />
+          </div>
+          <div class="slide-content flex-container">
+            <div class="slide-text-content flex-container">
+              <p class="slide-text text-subheading">Katran je proizvod sagrevanja cigarete. IQOS ne stvara katran jer
+                zagreva duvan umesto da ga
+                sagoreva. On stvara
+                aerosolni ostatak koji se suštinski razlikuje od katrana i sadrži znatno niže nivoe štetnih sastojaka**.
+                Potpuni
+                prelazak na IQOS je manje štetan od nastavka pušenja cigareta.***</p>
+              <p class="slide-text-border  text-border text-paragraph ">VAŽNA INFORMACIJA: Odsustvo katrana ne znači da je
+                IQOS proizvod bez rizika. IQOS
+                oslobađa nikotin, koji izaziva
+                zavisnost.</p>
+              <p class="slide-text-fusnote text-fusnote">* Stvorili smo naučnu mašinu koja meri količinu dima proizvedenog
+                sagorevanjem duvana u
+                cigareti i upoređuje je sa
+                duvanskom parom koja nastaje zagrevanjem duvana u IQOS-u. Na slici su prikazani filteri nakon sagorevanja i
+                zagrevanja
+                duvana. **Prosečno smanjenje nivoa čitavog niza štetnih sastojaka (isključujući nikotin) u poređenju sa
+                dimom
+                cigarete.
+                ***Izvor: Na osnovu ukupnih dokaza dostupnih za IQOS u poređenju sa nastavkom pušenja.</p>
+            </div>
+          </div>
+        </div>
+        <!--Fourth slide-->
+        <div class="slide slide-4 flex-container">
+    
+          <div class="slide-img">
+            <img src="assets/iqos-2.jpg" />
+          </div>
+          <div class="slide-content flex-container">
+            <div class="slide-text-content flex-container">
+              <p class="slide-text text-subheading">Cigarete sagorevaju duvan, što stvara visoke količine ugljen-monoksida.
+                IQOS ne sagoreva
+                duvan, tako da stvara u proseku
+                98% manje ugljen-monoksida (CO) i znatno niže nivoe drugih štetnih sastojaka u poređenju sa cigaretama. *
+              </p>
+              <p class="slide-text-border  text-border text-paragraph ">VAŽNA INFORMACIJA: To ne znači i smanjenje rizika od
+                98%. IQOS nije proizvod bez
+                rizika i on oslobađa nikotin, koji
+                izaziva zavisnost.</p>
+              <p class="slide-text-fusnote text-fusnote">*Izvor: Izmerili smo nivoe određenih štetnih sastojaka koje ugledne
+                organizacije za
+                javno zdravlje smatraju prioritetnim
+                prilikom izveštavanja. Tih sastojaka u proseku ima manje za 95% u poređenju sa dimom cigareta (isključujući
+                nikotin).</p>
+            </div>
+          </div>
+        </div>
+        <!--Fifth slide-->
+        <div class="slide slide-5 flex-container">
+    
+          <div class="slide-img">
+            <img src="assets/iqos-1.jpg" />
+          </div>
+          <div class="slide-content flex-container">
+            <div class="slide-text-content flex-container">
+              <p class="slide-text text-subheading">IQOS zagreva duvan umesto da ga sagoreva, što znači da ne morate da
+                brinete o pepelu. Zbog
+                toga je IQOS bolji izbor u
+                poređenju sa nastavkom pušenja cigareta.</p>
+              <p class="slide-text-border text-border text-paragraph">VAŽNA INFORMACIJA: Korišćenje duvanskih proizvoda
+                šteti vašem zdravlju i izaziva
+                zavisnost.</p>
+    
+            </div>
+          </div>
+        </div>
+        <div class="dots flex-container"></div>
+      </div>
+      <div class="buttons ">
+        <div class=" slider-button prev ">
+          <i class="fas fa-angle-left"></i>
+          <!-- <ion-icon name="chevron-back-outline"></ion-icon>
+                    </ion-icon> -->
+        </div>
+        <div class=" slider-button next ">
+          <i class="fas fa-angle-right right"></i>
+          <!-- <ion-icon name="chevron-forward-outline"></ion-icon>
+                      </ion-icon> -->
+        </div>
+      </div>
+    
+    
+    
+    
+    </section>
+    <!--End Slider-->
+   
+    <section id="" class= "flex-container " >
       <div class="content-wrapper bg-light">
         <div class="text-content flex-container">
           <h1 class="text-title-bold">IQOS je bolji izbor od nastavka pušenja cigareta.</h1>
@@ -58,137 +226,16 @@
         </div>
       </div>
       <div class= "section-image">
-        <img src="assets/iqos-1.jpg" alt="Iqos ">
+       
       </div>
     </section>
     <!-- End first section  -->
 
   
-  <!-- Second section Slider -->
-  <section class="slider-container">
-    <div class="slider">
-      <!--First slide-->
-      <div class="slide slide-1 active split flex-container">
-      
-        <div class="slide-img">
-      
-        </div>
-        <div class="slide-content flex-container">
-          <div class="slide-text-content flex-container">
-            <p class="slide-text text-subheading">IQOS zagreva duvan umesto da ga sagoreva, što znači da nema vatre, pepela ili dima.</p>
-            <p class="slide-text text-subheading"> Zbog toga je IQOS bolji izbor u
-              poređenju sa nastavkom pušenja cigareta.</p>
-            <p class="slide-text-border text-border text-paragraph">VAŽNA INFORMACIJA: IQOS nije proizvod bez rizika i on oslobađa nikotin, koji izaziva
-              zavisnost.</p>
-          </div>
-        </div>
-      </div>
-      <!--Second slide-->
-      <div class="slide slide-2 split flex-container">
-      
-        <div class="slide-img">
-          <img src="assets/iqos-2.jpg" />
-        </div>
-        <div class="slide-content flex-container">
-          <div class="slide-text-content flex-container">
-            <p class="slide-text text-subheading">IQOS zagreva duvan umesto da ga sagoreva, što u proseku proizvodi 95% manje štetnih
-              sastojaka u poređenju sa
-              cigaretama*.</p>
-            <p class="slide-text-border text-border text-paragraph">VAŽNA INFORMACIJA: To nužno ne znači i smanjenje rizika od 95%. IQOS nije proizvod
-              bez rizika. On oslobađa nikotin, koji
-              izaziva zavisnost.</p>
-            <p class="slide-text-fusnote text-fusnote">*„95% manje” predstavlja prosečno smanjenje nivoa čitavog niza štetnih sastojaka
-              (isključujući nikotin) u poređenju sa
-              dimom referentne cigarete (3R4F). Pogledajte „Važne informacije” na IQOS.com.</p>
-          </div>
-        </div>
-      </div>
-      <!--Third slide-->
-      <div class="slide slide-3 split flex-container">
-      
-        <div class="slide-img">
-          <img src="assets/iqos-1.jpg" />
-        </div>
-        <div class="slide-content flex-container">
-          <div class="slide-text-content flex-container">
-            <p class="slide-text text-subheading">Katran je proizvod sagrevanja cigarete. IQOS ne stvara katran jer zagreva duvan umesto da ga
-              sagoreva. On stvara
-              aerosolni ostatak koji se suštinski razlikuje od katrana i sadrži znatno niže nivoe štetnih sastojaka**. Potpuni
-              prelazak na IQOS je manje štetan od nastavka pušenja cigareta.***</p>
-            <p class="slide-text-border  text-border text-paragraph ">VAŽNA INFORMACIJA: Odsustvo katrana ne znači da je IQOS proizvod bez rizika. IQOS
-              oslobađa nikotin, koji izaziva
-              zavisnost.</p>
-            <p class="slide-text-fusnote text-fusnote">* Stvorili smo naučnu mašinu koja meri količinu dima proizvedenog sagorevanjem duvana u
-              cigareti i upoređuje je sa
-              duvanskom parom koja nastaje zagrevanjem duvana u IQOS-u. Na slici su prikazani filteri nakon sagorevanja i
-              zagrevanja
-              duvana. **Prosečno smanjenje nivoa čitavog niza štetnih sastojaka (isključujući nikotin) u poređenju sa dimom
-              cigarete.
-              ***Izvor: Na osnovu ukupnih dokaza dostupnih za IQOS u poređenju sa nastavkom pušenja.</p>
-          </div>
-        </div>
-      </div>
-      <!--Fourth slide-->
-      <div class="slide slide-4 split flex-container">
-      
-        <div class="slide-img">
-          <img src="assets/iqos-2.jpg" />
-        </div>
-        <div class="slide-content flex-container">
-          <div class="slide-text-content flex-container">
-            <p class="slide-text text-subheading">Cigarete sagorevaju duvan, što stvara visoke količine ugljen-monoksida. IQOS ne sagoreva
-              duvan, tako da stvara u proseku
-              98% manje ugljen-monoksida (CO) i znatno niže nivoe drugih štetnih sastojaka u poređenju sa cigaretama. *</p>
-            <p class="slide-text-border  text-border text-paragraph ">VAŽNA INFORMACIJA: To ne znači i smanjenje rizika od 98%. IQOS nije proizvod bez
-              rizika i on oslobađa nikotin, koji
-              izaziva zavisnost.</p>
-            <p class="slide-text-fusnote text-fusnote">*Izvor: Izmerili smo nivoe određenih štetnih sastojaka koje ugledne organizacije za
-              javno zdravlje smatraju prioritetnim
-              prilikom izveštavanja. Tih sastojaka u proseku ima manje za 95% u poređenju sa dimom cigareta (isključujući
-              nikotin).</p>
-          </div>
-        </div>
-      </div>
-      <!--Fifth slide-->
-      <div class="slide slide-5 split flex-container">
-      
-        <div class="slide-img">
-          <img src="assets/iqos-1.jpg" />
-        </div>
-        <div class="slide-content flex-container">
-          <div class="slide-text-content flex-container">
-            <p class="slide-text text-subheading">IQOS zagreva duvan umesto da ga sagoreva, što znači da ne morate da brinete o pepelu. Zbog
-              toga je IQOS bolji izbor u
-              poređenju sa nastavkom pušenja cigareta.</p>
-            <p class="slide-text-border text-border text-paragraph">VAŽNA INFORMACIJA: Korišćenje duvanskih proizvoda šteti vašem zdravlju i izaziva
-              zavisnost.</p>
-      
-          </div>
-        </div>
-      </div>
-<div class="dots flex-container"></div>
-    </div>
-     <div class="buttons flex-container">
-      <div class=" slider-button prev flex-container">
-        <i class="fas fa-angle-left"></i>
-        <!-- <ion-icon name="chevron-back-outline"></ion-icon>
-            </ion-icon> -->
-      </div>
-      <div class=" slider-button next flex-container">
-        <i class="fas fa-angle-right right"></i>
-        <!-- <ion-icon name="chevron-forward-outline"></ion-icon>
-              </ion-icon> -->
-      </div>
-     </div>
-    
-     
-    
-   
-  </section>
-    <!--End Slider-->
+  
 
     <!-- III Section-->
-    <section class="two-images-section flex-container split bg-light" >
+    <section id="manje-stetnih-sastojaka" class=" flex-container bg-light" >
 <div class="left-container flex-container">
 <div class="text-container flex-container">
   <h2 class="text-title-bold">Manje štetnih sastojaka</h2>
@@ -214,7 +261,7 @@
     <!--End III Section-->
 
     <!-- IV Section-->
-    <section id="blue-img-bg" class="two-images-section flex-container split section-reverse">
+    <section id="IQOS-zagreva-duvan" class=" flex-container section-reverse">
       <div class="right-container flex-container bg-secondary">
         <div class="image-container-right">
           <img src="./assets/section4.png" alt="" />
@@ -235,7 +282,7 @@
     <!--End IV Section-->
 
     <!--V section-->
-    <section class=" flex-container split bg-primary">
+    <section id="Sagorevanje-cigareta" class=" flex-container bg-primary">
 <div class="">
 <div class="text-container flex-container">
   <h2 class="text-title-bold">Sagorevanje cigareta glavni je uzrok bolesti povezanih sa pušenjem.</h2>
@@ -263,7 +310,7 @@ nekliničkih studija.
     <!--End V Section-->
 
     <!--VI section-->
-    <section class="flex-container split bg-primary">
+    <section id="together-forward" class="flex-container bg-primary">
     <div class="">
       <div class="image-container">
         <img src="./assets/iqos3.jpg" alt="" />

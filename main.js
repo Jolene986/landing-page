@@ -1,9 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+  /*HAMBURGER */
+  let navIcon = document.querySelector("#nav-icon");
+  if (navIcon) {
+    navIcon.addEventListener("click", function () {
+      navIcon.classList.toggle("open");
+    });
+  }
+  /*SLIDER */
+  let timeoutId;
+
   const slides = Array.from(document.querySelectorAll(".slide"));
   //const slider = document.querySelectorAll(".slider");
   const buttons = document.querySelectorAll(".slider-button");
   const dotsEl = document.querySelector(".dots");
-  let timeoutId;
 
   function getNextPrev() {
     const activeSlide = document.querySelector(".slide.active");
@@ -124,12 +133,4 @@ document.addEventListener("DOMContentLoaded", function () {
   //autoLoop();
 
   /*MOBILE MENU */
-
-  let hamburgerIcon = document.querySelector(".hamburger");
-  let menu = document.querySelector(".menu");
-
-  hamburgerIcon.addEventListener("click", function () {
-    console.log("button ");
-    menu.classList.toggle("show");
-  });
 });

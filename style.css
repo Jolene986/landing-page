@@ -1,3 +1,8 @@
+@font-face {
+  font-family: IQOS;
+  src: url(assets/fonts/IQOS-Regular.otf);
+}
+
 /*********************************************************************************
                                      GLOBALS
 ********************************************************************************/
@@ -21,7 +26,7 @@
 
   --f-subheading-normal: normal normal normal 30px/46px IQOS;
   --f-link-footer: normal normal normal 20px/48px IQOS;
-  --f-link-header: normal normal normal 18px/28px IQOS;
+  --f-link-header: normal normal normal 2.2rem/3.4rem IQOS;
 
   --f-text-normal: normal normal normal 20px/30px IQOS;
   --f-text-small: normal normal normal 15px/23px IQOS;
@@ -38,20 +43,28 @@ html {
   color: var(--clr-text);
   opacity: 1;
   background-color: #fff;
-  font-size: 1rem;
+  font-family: IQOS;
+  font-size: 62.5%; /*10px*/
 }
 body {
-  /*overflow-x: hidden;*/
-  position: relative;
   color: var(--text-color);
   letter-spacing: 0px;
 }
 main {
-  width: min(1748px, 90%);
+  width: min(1748px, 95%);
   margin: 0 auto;
 }
 ul {
   list-style: none;
+}
+
+body
+  > main
+  > section.slider-container
+  > div.buttons.flex-container
+  > div.slider-button.next {
+  width: 50px;
+  height: 50px;
 }
 /********
 Typografy
@@ -72,13 +85,13 @@ a {
 
 img {
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 section {
   /* min-height: 50%; */
-  height: 1099px;
+  height: clamp(850px, 100vh, 1099px);
   width: 100%;
   position: relative;
   padding: 5% 0;
@@ -115,20 +128,17 @@ Utility classes
   align-items: center;
   justify-content: center;
 }
-.split > * {
+.flex-container > * {
   flex-basis: 100%;
 }
 
-.split > * + * {
-  margin-left: 87px;
-}
 .text-title-large {
   text-align: left;
   font: var(--f-heading-large-bold);
   letter-spacing: 0px;
   color: var(--clr-text);
   opacity: 1;
-  font-size: clamp(2.5rem, 3.5vw, 70px);
+  font-size: clamp(36px, 3.5vw, 70px);
 }
 .text-title-bold {
   text-align: left;
@@ -136,8 +146,9 @@ Utility classes
   letter-spacing: 0px;
   color: var(--clr-text);
   opacity: 1;
-  font-size: clamp(2rem, 3vw, 58px);
+  font-size: clamp(36px, 3.1vw, 58px);
 }
+
 .text-subheading {
   font: var(--f-subheading-normal);
   font-size: clamp(1.5rem, 1.5vw, 30px);
@@ -146,7 +157,7 @@ Utility classes
   color: var(--clr-text);
   font: var(--f-text-normal);
   text-align: left;
-  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  font-size: clamp(18px, 1.25vw, 1.25rem);
 }
 
 .text-border {
@@ -164,15 +175,45 @@ Utility classes
 /*********************************************************************************
                                      HEADER
 ********************************************************************************/
+.nav-icon-wrapper {
+  position: relative;
+  margin-left: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.nav-icon-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nav-icon-wrapper.open svg {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transition: all 0.3s ease-out;
 
+  opacity: 1;
+}
+
+.nav-icon-wrapper.open .top {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.nav-icon-wrapper.open .bottom {
+}
 /***********
 Desktop menu
 ************/
+nav {
+  padding: 2rem;
+  background-color: #00d1d2;
+}
 .navigation-menu {
-  height: 101px;
-  box-shadow: 0px 4px 10px var(--clr-text);
-
-  justify-content: start;
+  width: 1920px;
+  height: 163px;
+  background: #e8e7e9 0% 0% no-repeat padding-box;
+  box-shadow: 0px 4px 10px #34303d1a;
+  opacity: 1;
 }
 
 ul {
@@ -180,45 +221,98 @@ ul {
   width: 50%;
 }
 .nav-link {
+  display: inline-block;
   text-align: left;
-  font: --f-link-header;
+  font: var(--f-link-header);
   letter-spacing: 0px;
   color: var(--clr-text);
   opacity: 0.8;
 }
 
-.hamburger {
-  display: none;
-}
 .logo-container {
   justify-content: flex-start;
   width: 50%;
 }
 .logo {
-  width: 95px;
-  height: 24px;
+  width: 760px;
+  height: 193px;
+  border: 10px solid #e8e7e9;
+  opacity: 1;
 }
 
 /***********
 Mobile menu
 ************/
 
-.hamburger {
-  width: 45px;
-  height: 45px;
-  /* position: fixed;
-    top: 50px;
-    right: 50px; */
-  flex-direction: column;
-  justify-content: space-around;
+#nav-icon {
+  width: 22px;
+  height: 10px;
+  opacity: 0.8;
+  position: relative;
+  margin: 2.2rem auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
 }
 
-.line {
-  width: 100%;
+#nav-icon span {
+  display: block;
+  position: absolute;
   height: 2px;
-  background-color: var(--clr-text);
-  margin: auto;
-  transition: all 0.8s;
+  width: 2.156rem;
+  background: #34303d;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#nav-icon span:nth-child(2) {
+  top: 9px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+#nav-icon.open span {
+  height: 0.15rem;
+}
+#nav-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -2px;
+  left: 3px;
+}
+
+#nav-icon.open span:nth-child(2) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 13px;
+  left: 3px;
 }
 
 /*********************************************************************************
@@ -228,12 +322,9 @@ Mobile menu
 First section
 *******/
 
-#hero {
-  /* height: 100vh; */
-}
 .content-wrapper {
   width: min(60%, 1036px);
-  height: min(852px, 45vw);
+
   position: absolute;
   left: 0;
   top: 15%;
@@ -250,11 +341,9 @@ First section
 }
 
 .section-image {
-  background: transparent url("assets/iqos-1.jpg") 0% 0% no-repeat padding-box;
-  background-size: cover;
   opacity: 1;
   width: min(50%, 843px);
-  height: min(48.3%, 501px);
+
   position: absolute;
   top: 9%;
   right: 0;
@@ -270,12 +359,12 @@ First section
 }
 .slider {
   width: 100%;
-  height: 641px;
+
   position: inherit;
 }
 .slide {
   width: 100%;
-  height: 641px;
+
   justify-content: space-between;
   position: absolute;
   z-index: -1;
@@ -305,19 +394,18 @@ First section
 /*Slide elements styling*/
 
 .slide-content {
-  width: 874px;
-  height: 641px;
+  width: min(874px, 45%);
 }
 
 .slide-img {
-  width: 874px;
-  height: 641px;
+  width: min(874px, 45%);
+
   background: transparent url("assets/iqos-1.jpg") 0% 0% no-repeat padding-box;
   background-size: cover;
 }
 .slide-text-content {
-  width: 696px;
-  height: 641px;
+  width: min(696px, 80%);
+
   flex-direction: column;
   align-items: flex-start;
 }
@@ -346,7 +434,7 @@ First section
 }
 .dots .dot {
   display: inline-block;
-  height: 12px;
+
   width: 12px;
   background-color: var(--clr-primary);
   opacity: 0.5;
@@ -368,7 +456,7 @@ First section
   bottom: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+
   display: flex;
   justify-content: space-between;
 }
@@ -376,7 +464,7 @@ First section
 .slider-button {
   cursor: pointer;
   width: 50px;
-  height: 50px;
+
   background: rgba(0, 209, 210, 0.2) 0% 0% no-repeat padding-box;
 
   border-radius: 50%;
@@ -404,19 +492,17 @@ First section
 Third section
 *************/
 
-.two-images-section > div {
-  width: 50%;
-  height: 874px;
+#manje-stetnih-sastojaka {
 }
+
 .left-container {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  /*margin-left: 86px;*/
 }
 .text-container {
   text-align: left;
-  width: 550px;
+  width: min(550px, 28.7vw);
   flex-direction: column;
   justify-content: space-between;
 }
@@ -425,13 +511,12 @@ Third section
   /* position: absolute;
   top: 829px; */
   transform: translateY(68%);
-  width: 556px;
-  height: 397px;
+  width: min(556px, 29vw);
 }
 
 .right-container {
   position: relative;
-  height: 874px;
+  width: clamp(360px, 94.6%, 874px);
 }
 .right-container::before {
   content: "";
@@ -451,8 +536,8 @@ Third section
 }
 
 .image-container-right {
-  width: 246px;
-  height: 537px;
+  width: clamp(182px, 28.2%, 246px);
+
   object-fit: cover;
 }
 /************
@@ -460,28 +545,35 @@ Fourth section
 *************/
 
 /**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! fixed distance you need to - padding*/
-#blue-img-bg {
+#IQOS-zagreva-duvan {
   margin-top: 258px;
 }
 /*Smaler image different height*/
-#blue-img-bg > div.left-container.flex-container > div.image-container-left {
-  height: 359px;
+#IQOS-zagreva-duvan .image-container-left {
 }
-/****************
-V and VI sections 
-**********************/
 
+/***********
+V  section
+************/
+
+#Sagorevanje-cigareta {
+}
 .image-container {
-  width: 874px;
+  width: 100%;
 }
 
+/***********
+VI  section
+************/
+
+#together-forward {
+}
 /************
 Warning popup
 *************/
 
 .warning {
   width: 100%;
-  height: 108px;
 }
 /*********************************************************************************
                                      FOOTER
@@ -490,8 +582,7 @@ Warning popup
 .footer {
   width: 100%;
   color: #fff;
-  max-height: 298px;
-  height: 298px;
+
   background-color: var(--clr-text);
   flex-direction: column;
 }
@@ -509,92 +600,3 @@ Warning popup
 /*********************************************************************************
                                      RESPONSIVE
 ********************************************************************************/
-
-/* Laptop 1553px */
-@media (max-width: 1600px) {
-  /* .content {
-    padding: 5%;
-  }
-  .content > p,
-  .text-content > p {
-    padding: 2%;
-    padding-left: 0;
-    line-height: 20px;
-  }
-  #first > div.section-background > div > p {
-    padding: 12px 36px;
-    text-align: left;
-  }
-
-  /*Slider*/
-  /*.slide-content {
-    width: 50%;
-    height: 500px;
-  }
-
-  .slide-img {
-    width: 50%;
-    height: 500px;
-    background: transparent url("assets/iqos-1.jpg") 0% 0% no-repeat padding-box;
-    background-size: cover;
-  }
-  .slide-text-content {
-    width: 40%;
-    height: 500px;
-  }
-  .slide-text {
-    font-size: 30px;
-    line-height: 46px;
-    padding-bottom: 47px;
-    padding-right: 2%;
-  }
-  .slide-text-border {
-    padding: 12px 36px;
-    font-size: 20px;
-    line-height: 20px;
-  }
-  .slide-text-note {
-    font-size: 15px;
-    line-height: 23px;
-    padding-top: 14px;
-    padding-right: 3%;
-  } */
-}
-
-/*Laptop */
-@media (max-width: 1440px) {
-}
-
-/* Tablet 768px */
-@media (max-width: 768px) {
-  section {
-  }
-  .split {
-    flex-direction: column;
-  }
-  .split > div {
-    width: 100%;
-  }
-  .split > * + * {
-    margin-left: 0;
-  }
-  /*Menu*/
-  .menu,
-  .logo-container {
-    width: 100%;
-  }
-  .menu {
-    height: 0px;
-  }
-  .menu.show {
-    height: 200px;
-  }
-  /*Slider*/
-  .slide-1 .content {
-    left: 20px;
-  }
-  .dots {
-    left: 0;
-    transform: translateX(0);
-  }
-}
