@@ -1,12 +1,22 @@
-@font-face {
+/* @font-face {
   font-family: IQOS;
   src: url(assets/fonts/IQOS-Regular.otf);
-}
+} */
 
 @font-face {
-  font-family: IQOS;
-  src: url("./assets/fonts/IQOS-Regular.otf");
-  src: local("☺︎"), url("./assets/fonts/IQOS-Regular.otf") format("opentype");
+  font-family: "IQOS";
+  src: url("assets/fonts/IQOS-Regular.otf"); /*Chrome šćč*/
+  src: url("assets/fonts/iqos-regular-webfont.eot"); /* IE9 Compat Modes */
+  src: url("assets/fonts/iqos-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("assets/fonts/iqos-regular-webfont.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("assets/fonts/iqos-regular-webfont.woff")
+      format("woff"),
+    /* Pretty Modern Browsers */ url("assets/fonts/iqos-regular-webfont.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */ url("assets/fonts/webfont.svg#svgFontName")
+      format("svg");
+  /* Legacy iOS */
 }
 
 /*********************************************************************************
@@ -57,23 +67,21 @@ body {
   letter-spacing: 0px;
 }
 
+#slider,
+main {
+  background-color: var(--clr-primary);
+  display: none;
+}
 /*****************************************************************MAIN*******************/
 main {
   width: min(1748px, 95%);
+  max-width: 95%;
   margin: 0 auto;
 }
 ul {
   list-style: none;
 }
 
-body
-  > main
-  > section.slider-container
-  > div.buttons.flex-container
-  > div.slider-button.next {
-  width: 50px;
-  height: 50px;
-}
 /********
 Typografy
 *********/
@@ -99,7 +107,7 @@ img {
 
 section {
   /* min-height: 50%; */
-  height: clamp(850px, 100vh, 1099px);
+  /* height: clamp(850px, 100vh, 1099px); */
   width: 100%;
   position: relative;
   padding: 5% 0;
@@ -132,13 +140,20 @@ Utility classes
 }
 .flex-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.flex-container > * {
-  flex-basis: 100%;
+.split > div {
+  max-width: 50%;
 }
+@supports (flex-basis: 100%) {
+  .split > * {
+    flex-basis: 100%;
+  }
+}
+
+/*TEXT CLASSES*/
 
 .text-title-large {
   text-align: left;
@@ -187,46 +202,19 @@ Utility classes
 /***********
 Desktop menu
 ************/
-nav {
-  padding: 2rem;
-  background-color: #00d1d2;
+.desktop-nav {
+  display: none;
 }
-.navigation-menu {
-  width: 1920px;
-  height: 163px;
-  background: #e8e7e9 0% 0% no-repeat padding-box;
-  box-shadow: 0px 4px 10px #34303d1a;
-  opacity: 1;
-}
-
-ul {
-  justify-content: flex-start;
-  width: 50%;
-}
-.nav-link {
-  display: inline-block;
-  text-align: left;
-  font: var(--f-link-header);
-  letter-spacing: 0px;
-  color: var(--clr-text);
-  opacity: 0.8;
-}
-
-.logo-container {
-  justify-content: flex-start;
-  width: 50%;
-}
-.logo {
-  width: 760px;
-  height: 193px;
-  border: 10px solid #e8e7e9;
-  opacity: 1;
-}
-
 /***********
 Mobile menu
 ************/
+.mobile-nav {
+}
 
+.logo-container {
+}
+
+/*Nav Icon*/
 #nav-icon {
   width: 22px;
   height: 10px;
@@ -582,3 +570,22 @@ Warning popup
 /*********************************************************************************
                                      RESPONSIVE
 ********************************************************************************/
+
+@media only screen and (min-width: 768px) {
+  /*Utility*/
+  .flex-container {
+    flex-direction: row;
+  }
+
+  /*Navigation*/
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  /*Navigation*/
+  .mobile-nav {
+    display: none;
+  }
+}

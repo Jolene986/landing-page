@@ -1,3 +1,24 @@
+/* https://jhildenbiddle.github.io/css-vars-ponyfill/#/?id=variables */
+/*Determines how the ponyfill handles modern browsers with native CSS custom property support.
+
+When true, the ponyfill will only generate legacy-compatible CSS and invoke associated callbacks in browsers that lack native support for CSS custom properties (i.e. “legacy” browsers). When false, the ponyfill will treat all browsers as legacy, generating legacy-compatible CSS and invoking associated callbacks regardless of support for CSS custom properties.
+
+Tip: Setting this value to false allows for easier testing and debugging in modern browsers when legacy browsers are not accessible. */
+
+// cssVars({
+//   onlyLegacy: true, // default
+// });
+
+// cssVars({
+//   // Treat all browsers as legacy
+//   onlyLegacy: false,
+// });
+
+cssVars({
+  // Treat Edge 15/16 as legacy
+  onlyLegacy: !/Edge\/1[56]\./i.test(navigator.userAgent),
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   /*HAMBURGER */
   var navIcon = document.querySelector("#nav-icon");
@@ -141,6 +162,4 @@ document.addEventListener("DOMContentLoaded", function () {
   getActiveDot();
   functionalDots();
   //autoLoop();
-
-  /*MOBILE MENU */
 });
