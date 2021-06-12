@@ -32,9 +32,11 @@
   --clr-neutral-100: #fff;
   --clr-neutral-200: #f5f4f0;
   --clr-neutral-300: #f6f4ef;
+  --clr-neutral-400: #fffdfb;
 
   --clr-gray-300: #e7e7e7;
   --clr-gray-400: #e8e8e8;
+  --clr-gray-500: #e8e7e9;
   --clr-gray-900: #34303d1a;
 
   --f-heading-large-bold: normal normal bold 70px/80px IQOS;
@@ -42,7 +44,6 @@
 
   --f-subheading-normal: normal normal normal 30px/46px IQOS;
   --f-link-footer: normal normal normal 20px/48px IQOS;
-  --f-link-header: normal normal normal 2.2rem/3.4rem IQOS;
 
   --f-text-normal: normal normal normal 20px/30px IQOS;
   --f-text-small: normal normal normal 15px/23px IQOS;
@@ -67,16 +68,10 @@ body {
   letter-spacing: 0px;
 }
 
-#slider,
-main {
-  background-color: var(--clr-primary);
-  display: none;
+nav {
 }
-/*****************************************************************MAIN*******************/
-main {
-  width: min(1748px, 95%);
-  max-width: 95%;
-  margin: 0 auto;
+.main {
+  width: 100%;
 }
 ul {
   list-style: none;
@@ -90,6 +85,7 @@ p,
 a {
   font: var(--f-text-normal);
   letter-spacing: 0px;
+  text-align: left;
 }
 a {
   text-decoration: none;
@@ -99,18 +95,16 @@ a {
   UI
 ******/
 
-img {
+img,
+svg {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
 section {
-  /* min-height: 50%; */
-  /* height: clamp(850px, 100vh, 1099px); */
   width: 100%;
   position: relative;
-  padding: 5% 0;
 }
 
 /*****************
@@ -180,7 +174,7 @@ Utility classes
   color: var(--clr-text);
   font: var(--f-text-normal);
   text-align: left;
-  font-size: clamp(18px, 1.25vw, 1.25rem);
+  font-size: clamp(18px, 1.25vw, 2rem);
 }
 
 .text-border {
@@ -195,6 +189,29 @@ Utility classes
   text-align: left;
   font: var(--f-text-small);
 }
+
+.nav-link {
+  color: var(--clr-text);
+  font-family: IQOS;
+  font-size: clamp(1.8rem, 1.55vw, 2.2rem);
+  line-height: 1.54em;
+
+  opacity: 0.8;
+  margin-top: 0.5em;
+}
+.nav-link span {
+  margin-left: 1em;
+  margin-right: 0.5em;
+}
+.nav-link i {
+  width: 25px;
+  height: 13px;
+}
+ul.mobile-menu > li:nth-child(1) > a > span,
+ul.desktop-menu > li:nth-child(1) > a {
+  font-weight: bold;
+  border-bottom: 3px solid var(--clr-primary);
+}
 /*********************************************************************************
                                      HEADER
 ********************************************************************************/
@@ -204,23 +221,68 @@ Desktop menu
 ************/
 .desktop-nav {
   display: none;
+  background: var(--clr-gray-500);
+  box-shadow: 0px 4px 10px var(--clr-gray-900);
+  max-height: 8.5vw;
+  align-items: flex-start;
 }
+ul.desktop-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1.3vw;
+}
+.logo {
+  width: min(76.02rem, 39.6vw);
+}
+
 /***********
 Mobile menu
 ************/
 .mobile-nav {
+  background: var(--clr-gray-500);
+  width: 100%;
+  max-height: 5.4rem;
+  box-shadow: 0px 4px 10px var(--clr-gray-900);
 }
 
 .logo-container {
+  width: min(20.5rem, 55.4%);
+  margin: 0 auto;
+  margin-top: 0.733rem;
+}
+.logo-container svg {
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
 }
 
+ul.mobile-menu {
+  background-color: var(--clr-neutral-400);
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease-out;
+}
+
+.mobile-menu li {
+  display: block;
+  padding: 10px 15px;
+  /* transition: all 0.3s ease-out; */
+}
+
+.mobile-menu.open {
+  max-height: 22.1rem;
+}
 /*Nav Icon*/
 #nav-icon {
   width: 22px;
   height: 10px;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   position: relative;
-  margin: 2.2rem auto;
+  top: 2.45rem;
+  left: 3.19rem;
+  margin: 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -230,15 +292,16 @@ Mobile menu
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  outline: none;
 }
 
 #nav-icon span {
   display: block;
   position: absolute;
-  height: 2px;
+  height: 1.7px;
   width: 2.156rem;
   background: #34303d;
-  opacity: 1;
+  opacity: 0.8;
   left: 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -325,20 +388,21 @@ First section
      Slider 
 ****************/
 .slider-container {
-  overflow-x: hidden;
   position: relative;
+  min-height: 897.02px;
+  background-color: var(--clr-neutral-300);
+  padding-top: 41px;
 }
 .slider {
   width: 100%;
-
-  position: inherit;
 }
+
 .slide {
   width: 100%;
   justify-content: space-between;
   position: absolute;
   z-index: -1;
-  background-color: var(--slider-bg);
+  background-color: var(--clr-neutral-300);
 }
 .slide::after {
   content: "";
@@ -363,45 +427,50 @@ First section
 
 /*Slide elements styling*/
 
-.slide-content {
-  width: min(874px, 45%);
-}
-
+.slide-content,
 .slide-img {
-  width: min(874px, 45%);
-
-  background: transparent url("assets/iqos-1.jpg") 0% 0% no-repeat padding-box;
-  background-size: cover;
+  width: 100%;
+  margin: 0 auto;
 }
-.slide-text-content {
-  width: min(696px, 80%);
 
+.slide-text-content {
+  width: clamp(29.8rem, 82.8%, 74.9rem);
   flex-direction: column;
   align-items: flex-start;
+  padding-top: 4.3em;
 }
+
 .slide-text {
-  padding-bottom: 47px;
-  padding-right: 2%;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 1.54em;
+  padding-bottom: 1.33em;
 }
+
+/* .slide-content > div > p:nth-child(2) {
+  padding-top: 0.5em;
+} */
 .slide-text-border {
-  padding: 12px 36px;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: 1.5em;
+  padding: 0.92em 1.77em;
 }
 .slide-text-fusnote {
-  padding-top: 14px;
-  padding-right: 3%;
+  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  line-height: 1.5em;
 }
 
 /*Slider navigation*/
 
 .dots {
   z-index: 5;
-  position: absolute;
-  bottom: -45px;
-  left: 50%;
   transform: translateX(-50%);
   width: 104px;
   justify-content: space-between;
+  position: absolute;
+  top: 33%;
+  left: 50%;
 }
+
 .dots .dot {
   display: inline-block;
   height: 12px;
@@ -418,7 +487,7 @@ First section
   border-radius: 6px;
   opacity: 1;
 }
-.buttons {
+/* .buttons {
   position: absolute;
   z-index: 3;
   top: 0;
@@ -429,9 +498,9 @@ First section
 
   display: flex;
   justify-content: space-between;
-}
+} */
 
-.slider-button {
+/* .slider-button {
   cursor: pointer;
   width: 50px;
 
@@ -448,7 +517,7 @@ First section
   color: var(--clr-primary);
   opacity: 1;
   position: relative;
-  /* transform: matrix(0, 1, -1, 0, 0, 0); */
+  
 }
 
 .slider-button i::before {
@@ -456,7 +525,7 @@ First section
   position: absolute;
   top: -50%;
   left: 25%;
-}
+} */
 
 /************
 Third section
@@ -522,7 +591,7 @@ Fourth section
 #IQOS-zagreva-duvan .image-container-left {
 }
 
-/***********
+/*********
 V  section
 ************/
 
@@ -570,22 +639,51 @@ Warning popup
 /*********************************************************************************
                                      RESPONSIVE
 ********************************************************************************/
+@media only screen and (min-width: 400px) {
+  .dots {
+    top: 60%;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   /*Utility*/
   .flex-container {
     flex-direction: row;
   }
-
+  .main {
+    width: min(1748px, 95%);
+    max-width: 95%;
+    margin: 0 auto;
+    margin-top: 8vw;
+  }
   /*Navigation*/
+
   .desktop-nav {
     display: flex;
   }
-}
-
-@media only screen and (min-width: 769px) {
   /*Navigation*/
   .mobile-nav {
     display: none;
+  }
+  /*SLIDER*/
+
+  .slider-container {
+    overflow-x: hidden;
+    background-color: transparent;
+    min-height: 59.35vh;
+    padding-top: 0;
+  }
+
+  .slider {
+    overflow-x: hidden;
+  }
+  .slide-img,
+  .slide-content {
+    flex-basis: 100%;
+    width: min(87.4rem, 50%);
+    margin: 0;
+  }
+  .slide-text-content {
+    flex-direction: column;
   }
 }

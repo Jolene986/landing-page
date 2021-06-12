@@ -20,12 +20,14 @@ cssVars({
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  /*HAMBURGER */
+  /*MOBILE NAVIGATION */
   var navIcon = document.querySelector("#nav-icon");
+  var menu = document.querySelector(".mobile-menu");
   if (navIcon) {
     navIcon.addEventListener("click", function () {
       console.log("click");
       navIcon.classList.toggle("open");
+      menu.classList.toggle("open");
     });
   }
   /*SLIDER */
