@@ -354,6 +354,7 @@ ul.mobile-menu {
   min-height: 897.02px;
   background-color: var(--clr-neutral-300);
   padding-top: 41px;
+  overflow-x: hidden;
 }
 .slider {
   width: 100%;
