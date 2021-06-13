@@ -64,6 +64,7 @@ html {
   font-size: 62.5%; /*10px*/
 }
 body {
+  overflow-x: hidden;
   color: var(--text-color);
   letter-spacing: 0px;
 }
@@ -655,7 +656,7 @@ Warning popup
   .slider-container {
     overflow-x: hidden;
     background-color: transparent;
-    min-height: 59.35vh;
+    /* min-height: 59.35vh; */
     padding-top: 0;
   }
 
