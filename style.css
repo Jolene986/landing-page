@@ -179,8 +179,8 @@ Utility classes
 }
 
 .text-fusnote {
-  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
-  line-height: 1.5em;
+  font-size: 1.3rem;
+  line-height: 1.54em;
 }
 
 .nav-link {
@@ -416,6 +416,7 @@ ul.mobile-menu {
   font-size: clamp(1.3rem, 1.1vw, 2rem);
   line-height: 1.5em;
   padding: 12px 23px;
+  margin-bottom: 13px;
 }
 
 /*Slider navigation*/
@@ -689,5 +690,12 @@ Warning popup
 
   .image-container-right.hide {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .text-fusnote {
+    font-size: 1.5rem;
+    line-height: 1.533em;
   }
 }
