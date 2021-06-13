@@ -404,7 +404,7 @@ ul.mobile-menu {
 }
 
 .slide-text {
-  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-size: clamp(1.8rem, 1.4vw, 3rem);
   line-height: 1.54em;
   padding-bottom: 1.33em;
 }
@@ -413,7 +413,7 @@ ul.mobile-menu {
   padding-top: 0.5em;
 } */
 .slide-text-border {
-  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-size: clamp(1.3rem, 1.4vw, 2rem);
   line-height: 1.5em;
   padding: 0.92em 1.77em;
 }
