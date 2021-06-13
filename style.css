@@ -463,11 +463,10 @@ ul.mobile-menu {
 .slider-button {
   cursor: pointer;
   width: 50px;
-
-  background: rgba(0, 209, 210, 0.2) 0% 0% no-repeat padding-box;
-
+  /*background: rgba(0, 209, 210, 0.2) 0% 0% no-repeat padding-box;*/
   border-radius: 50%;
 }
+
 .slider-button > i {
   width: 33px;
   height: 17px;
