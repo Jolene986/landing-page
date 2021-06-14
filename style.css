@@ -216,6 +216,7 @@ ul.desktop-menu {
 }
 .logo {
   width: min(76.02rem, 39.6vw);
+  margin-inline: 3vw;
 }
 
 /***********
@@ -501,7 +502,7 @@ I SECTION
   text-align: left;
   flex-direction: column;
   margin-top: 8%;
-  width: 83.3%;
+  width: 85.3%;
   margin: 0 auto;
 }
 #better-choice > div.content-wrapper.bg-light > div > div > p {
@@ -581,8 +582,6 @@ III SECTION
 .image-container-right.hide {
   display: none;
   background-image: url("/assets/images/sluse.png");
-  width: 556px;
-  height: 359px;
 }
 
 #iqos-heets > div.right-container.flex-container > div > p {
@@ -661,6 +660,9 @@ Warning popup
 ********************************************************************************/
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   background-color: var(--clr-text);
   flex-direction: column;
@@ -747,6 +749,9 @@ Warning popup
   .slide-text-content {
     flex-direction: column;
   }
+  .dots {
+    top: 36vw;
+  }
   .buttons {
     display: flex;
   }
@@ -759,11 +764,11 @@ Warning popup
     flex-direction: row;
   }
   /* #better-choice > div,
+   #combustion > div,*/
   #less-harmful > div,
-  #iqos-heets > div,
-  #combustion > div {
+  #iqos-heets > div {
     flex-basis: 100%;
-  } */
+  }
   .text-content {
     flex-direction: column;
   }
@@ -772,40 +777,101 @@ Warning popup
     display: block;
     margin-bottom: 114px;
   }
-  /* #better-choice > div {
-    position: absolute;
-  } */
-  .first-section-image {
-    width: 843px;
-    height: 501px;
+  #better-choice .text-content {
+    width: 37.95vw;
+    height: 43.7vw;
   }
+
+  #better-choice .first-section-image {
+    position: relative;
+    top: -47vw;
+    left: 51.7%;
+  }
+
   #better-choice > div.content-wrapper.bg-light {
-    width: 1036px;
+    width: 53.955vw;
+  }
+  .first-section-image {
+    width: 43.9vw;
+    height: 26.1vw;
   }
   /*II SECTION*/
+  #less-harmful {
+    margin-bottom: 5.7%;
+  }
   #less-harmful .image-container-right {
-    width: 874px;
-    height: 874px;
+    width: 45.53vw;
+    height: 45.53vw;
+  }
+  #less-harmful > .right-container {
+    margin-block: 7%;
+  }
+
+  #less-harmful .text-content {
+    width: 28.65vw;
   }
   /*III SECTION*/
+
+  #iqos-heets {
+    margin-bottom: 9vw;
+  }
+
   #iqos-heets .image-container-left {
-    width: 874px;
-    height: 874px;
+    width: 45.53vw;
+    height: 45.53vw;
+  }
+
+  #iqos-heets .text-content {
+    width: 28.65vw;
+    position: relative;
+    top: 11vw;
   }
   .image-container-right.hide {
     display: block;
+    width: 28.97vw;
+    height: 33.25vh;
+    margin-bottom: 150px;
   }
   /*IV SECTION*/
+  #combustion {
+    height: 37.25vw;
+    margin-bottom: 24.6%;
+  }
+
+  #combustion .text-content {
+    width: 34.15vw;
+  }
+
   #combustion .image-container {
-    width: 874px;
-    height: 874px;
+    width: 45.53vw;
+    height: 45.53vw;
+    position: relative;
+    top: 11vw;
+    left: 12.5%;
   }
 
   /*V SECTION*/
   #looking-forward .image-container {
     /* background-image: url("/assets/images/crtac.png"); */
-    width: 874px;
-    height: 1070px;
+    width: 45.53vw;
+    height: 55.74vw;
+    position: relative;
+    left: -18.3%;
+  }
+  #looking-forward .text-content {
+    width: 28.699vw;
+  }
+
+  .warning p {
+    padding: 1.24em 5em;
+  }
+  /*FOOTER*/
+
+  footer {
+    flex-direction: column;
+  }
+  .footer-links a {
+    margin-right: 3em;
   }
 }
 
