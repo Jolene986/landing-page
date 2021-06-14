@@ -38,15 +38,6 @@
   --clr-gray-400: #e8e8e8;
   --clr-gray-500: #e8e7e9;
   --clr-gray-900: #34303d1a;
-
-  --f-heading-large-bold: normal normal bold 70px/80px IQOS;
-  --f-heading-bold: normal normal bold 58px/75px IQOS;
-
-  --f-subheading-normal: normal normal normal 30px/46px IQOS;
-  --f-link-footer: normal normal normal 20px/48px IQOS;
-
-  --f-text-normal: normal normal normal 20px/30px IQOS;
-  --f-text-small: normal normal normal 15px/23px IQOS;
 }
 *,
 *::after,
@@ -139,13 +130,11 @@ Utility classes
   align-items: center;
   justify-content: center;
 }
-.split > div {
-  max-width: 50%;
-}
-@supports (flex-basis: 100%) {
-  .split > * {
-    flex-basis: 100%;
-  }
+
+.bg-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*TEXT CLASSES*/
@@ -355,6 +344,7 @@ ul.mobile-menu {
   background-color: var(--clr-neutral-300);
   padding-top: 41px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .slider {
   width: 100%;
@@ -422,12 +412,14 @@ ul.mobile-menu {
 /*Slider navigation*/
 
 .dots {
+  display: flex;
+  align-items: center;
   z-index: 5;
   transform: translateX(-50%);
   width: 104px;
   justify-content: space-between;
   position: absolute;
-  top: 33%;
+  top: 88vw;
   left: 50%;
 }
 
@@ -450,13 +442,12 @@ ul.mobile-menu {
 .buttons {
   position: absolute;
   z-index: 3;
-  top: 0;
+  top: 34%;
   left: 0;
   bottom: 0;
   right: 0;
   width: 100%;
-
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
@@ -482,17 +473,25 @@ ul.mobile-menu {
 .slider-button i::before {
   font-size: 33px;
   position: absolute;
-  top: -50%;
-  left: 25%;
+  top: 50%;
+  left: 50%;
+}
+.prev {
+  position: relative;
+  left: 1%;
+}
+.next {
+  position: relative;
+  right: 1%;
 }
 /******
 I SECTION
 *******/
-/*  #bolji-izbor  */
+/*  #better-choice  */
 
-#bolji-izbor,
-#manje-stetnih,
-#sagorevanje {
+#better-choice,
+#less-harmful,
+#combustion {
   flex-direction: column-reverse;
 }
 .content-wrapper {
@@ -505,19 +504,29 @@ I SECTION
   width: 83.3%;
   margin: 0 auto;
 }
-#bolji-izbor .text-title-bold {
+#better-choice > div.content-wrapper.bg-light > div > div > p {
+  margin-bottom: 2em;
+}
+#better-choice > div.content-wrapper.bg-light > div > div > p:nth-child(3) {
+  margin-bottom: 1.5em;
+}
+#better-choice .text-title-bold,
+#less-harmful .text-title-bold,
+#iqos-heets .text-title-bold {
   margin-top: 8%;
   margin-bottom: 5%;
 }
 
-.section-image {
-  object-fit: cover;
+.first-section-image {
+  background-image: url("assets/images/1.png");
+  width: 100%;
+  height: 296px;
 }
 
 /************
 II SECTION
 *************/
-/* #manje-stetnih */
+/* #less-harmful */
 
 .left-container {
   flex-direction: column;
@@ -525,9 +534,15 @@ II SECTION
   align-items: flex-start;
 }
 
-.image-container-left {
+#less-harmful > div.left-container.flex-container > div > p:nth-child(2) {
+  margin-bottom: 1.5em;
 }
 
+#less-harmful .image-container-right {
+  background-image: url("/assets/images/Group\ 11.png");
+  width: 100vw;
+  height: 483.85px;
+}
 .right-container {
 }
 /* .image-container-right::before {
@@ -547,35 +562,87 @@ II SECTION
   -webkit-transform: rotate(360deg);
 } */
 
-.image-container-right {
-  object-fit: cover;
+/*Bordered text bottom margin in II and III section*/
+#better-choice > div.content-wrapper.bg-light > div > p,
+#less-harmful
+  > div.left-container.flex-container
+  > div
+  > p.text-border.text-paragraph {
+  margin-bottom: 2.6em;
 }
 /************
 III SECTION
 *************/
-/* #iqos-zagreva-duvan */
+/* #iqos-heets */
 
-#iqos-zagreva-duvan {
+#iqos-heets {
   flex-direction: column;
 }
 .image-container-right.hide {
   display: none;
+  background-image: url("/assets/images/sluse.png");
+  width: 556px;
+  height: 359px;
+}
+
+#iqos-heets > div.right-container.flex-container > div > p {
+  margin-bottom: 2.6em;
+}
+
+#iqos-heets .image-container-left {
+  background-image: url("/assets/images/plava.png");
+  width: 100vw;
+  height: 483.85px;
 }
 /*********
-IV  section
+IV section
 ************/
-/* #sagorevanje-cigareta */
-#sagorevanje-cigareta {
+/* #combustion */
+#combustion {
   margin-bottom: 12%;
 }
-
-/***********
-V  section
-************/
-/*#gledamo-napred*/
-
-#gledamo-napred {
+#combustion > div:nth-child(1) > div > h2 {
+  margin-top: 0.8em;
+  margin-bottom: 0.45em;
 }
+#combustion > div:nth-child(1) > div > p:nth-child(2) {
+  margin-bottom: 24px;
+}
+#combustion > div:nth-child(1) > div > p.text-border {
+  margin-bottom: 2.4em;
+}
+
+#combustion .image-container {
+  background-image: url("/assets/images/crtac.png");
+  width: 100vw;
+  height: 483px;
+}
+/***********
+V section
+************/
+/*#looking-forward*/
+
+#looking-forward {
+}
+#looking-forward .image-container {
+  background-image: url("/assets/images/ruke-d.png");
+  width: 100vw;
+  height: 483px;
+}
+h2.text-title-large {
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+#looking-forward > div:nth-child(2) > div > p.text-border {
+  margin-top: 1.5em;
+  margin-bottom: 0.9em;
+}
+
+#looking-forward > div:nth-child(2) > div > p.text-fusnote {
+  margin-bottom: 3.3em;
+}
+
 /************
 Warning popup
 *************/
@@ -587,6 +654,7 @@ Warning popup
   text-align: center;
   font-size: clamp(3rem, 2.8vw, 4rem);
   line-height: 1.52em;
+  padding: 0.5em;
 }
 /*********************************************************************************
                                      FOOTER
@@ -610,19 +678,25 @@ Warning popup
   text-align: left;
   font-size: 2rem;
   line-height: 4.8rem;
+  margin-top: 1.7em;
 }
 
 .copy-right {
   color: var(--clr-neutral-100);
   text-align: center;
+  padding-block: 2.8em;
 }
 
 /*********************************************************************************
                                      RESPONSIVE
 ********************************************************************************/
-@media only screen and (min-width: 400px) {
+
+@media only screen and (min-width: 361px) {
   .dots {
-    top: 60%;
+  }
+}
+@media only screen and (min-width: 425px) {
+  .dots {
   }
 }
 
@@ -632,8 +706,8 @@ Warning popup
     flex-direction: row;
   }
   .main {
-    width: min(1748px, 95%);
-    max-width: 95%;
+    width: 95%;
+    width: min(174.8rem, 95%);
     margin: 0 auto;
     margin-top: 8vw;
   }
@@ -661,9 +735,9 @@ Warning popup
     padding-top: 0;
   }
 
-  .slider {
+  /* .slider {
     overflow-x: hidden;
-  }
+  } */
   .slide-img,
   .slide-content {
     flex-basis: 100%;
@@ -673,23 +747,65 @@ Warning popup
   .slide-text-content {
     flex-direction: column;
   }
+  .buttons {
+    display: flex;
+  }
+  /***MAIN***/
 
-  /*First section*/
-
-  #bolji-izbor,
-  #manje-stetnih,
-  #iqos-zagreva-duvan,
-  #sagorevanje {
+  #better-choice,
+  #less-harmful,
+  #iqos-heets,
+  #combustion {
     flex-direction: row;
   }
+  /* #better-choice > div,
+  #less-harmful > div,
+  #iqos-heets > div,
+  #combustion > div {
+    flex-basis: 100%;
+  } */
   .text-content {
     flex-direction: column;
   }
-
-  /*Third section*/
-
+  /*I SECTION*/
+  #better-choice {
+    display: block;
+    margin-bottom: 114px;
+  }
+  /* #better-choice > div {
+    position: absolute;
+  } */
+  .first-section-image {
+    width: 843px;
+    height: 501px;
+  }
+  #better-choice > div.content-wrapper.bg-light {
+    width: 1036px;
+  }
+  /*II SECTION*/
+  #less-harmful .image-container-right {
+    width: 874px;
+    height: 874px;
+  }
+  /*III SECTION*/
+  #iqos-heets .image-container-left {
+    width: 874px;
+    height: 874px;
+  }
   .image-container-right.hide {
     display: block;
+  }
+  /*IV SECTION*/
+  #combustion .image-container {
+    width: 874px;
+    height: 874px;
+  }
+
+  /*V SECTION*/
+  #looking-forward .image-container {
+    /* background-image: url("/assets/images/crtac.png"); */
+    width: 874px;
+    height: 1070px;
   }
 }
 
